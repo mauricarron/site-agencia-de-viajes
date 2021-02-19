@@ -1,0 +1,25 @@
+{
+  "name": "site-agencia-de-viajes",
+  "version": "1.0.0",
+  "description": "Full Stack Project - Sitio Agencia de Viajes",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdCarron/site-agencia-de-viajes.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mdCarron/site-agencia-de-viajes/issues"
+  },
+  "homepage": "https://github.com/mdCarron/site-agencia-de-viajes#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
