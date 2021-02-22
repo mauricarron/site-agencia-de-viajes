@@ -9,6 +9,7 @@ app.set("view engine", "pug");
 app.use((req, res, next) => {
   const date = new Date();
   res.locals.currentYear = date.getFullYear();
+  res.locals.siteTitle = "Agencia de Viajes";
 
   next();
 });
