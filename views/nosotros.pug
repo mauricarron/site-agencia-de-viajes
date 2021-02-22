@@ -2,4 +2,31 @@ extends ./layouts/index
 
 block content
     main.container.mt-5
-        h1= pagina
+        .row
+            .col-md-5 
+                img(src="/img/nosotros.jpg", class="img-fluid")
+            .col-md-7
+                h1= pagina
+                blockquote Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum adipisci iusto libero autem repudiandae! Sequi, eum amet tenetur magni consectetur necessitatibus architecto facere ipsam praesentium autem beatae fugit et natus.
+
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus fuga nisi ad asperiores cum, ratione possimus vitae corporis doloribus, ducimus aperiam saepe dicta vel iure placeat nam deserunt aut! Ratione.Animi corrupti magni recusandae harum dolorum doloribus eum tempora veniam exercitationem laborum. Distinctio porro alias assumenda fugiat consectetur unde? Quam ratione ipsam architecto molestias magni! Ex debitis voluptas dolores dolorem.
+
+                p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus libero beatae velit autem ea veritatis dolores voluptatibus maiores.
+
+    .listado-iconos 
+        .container.mt-5.py-5.text-center
+            .row
+                .col-md-4 
+                    img(src="/img/icono_seguridad.svg", alt="Seguridad", class="img-fluid mb-4")
+                    h2 Seguridad 
+                    p Delectus libero beatae velit autem ea veritatis dolores voluptatibus maiores sequi nihil aut quaerat voluptatum temporibus pariatur hic, ratione nostrum labore iure.
+
+                .col-md-4 
+                    img(src="/img/icono_destinos.svg", alt="Muchisimos destinos", class="img-fluid mb-4")
+                    h2 Muchisimos Destinos 
+                    p Delectus libero beatae velit autem ea veritatis dolores voluptatibus maiores sequi nihil aut quaerat voluptatum temporibus pariatur hic, ratione nostrum labore iure.
+
+                .col-md-4 
+                    img(src="/img/icono_precio.svg", alt="Los mejores precios", class="img-fluid mb-4")
+                    h2 Los mejores precios
+                    p Delectus libero beatae velit autem ea veritatis dolores voluptatibus maiores sequi nihil aut quaerat voluptatum temporibus pariatur hic, ratione nostrum labore iure.
