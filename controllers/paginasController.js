@@ -27,4 +27,25 @@ const paginaTestimoniales = (req, res) => {
   });
 };
 
-export { paginaInicio, paginaNosotros, paginaViajes, paginaTestimoniales };
+const paginaDetalleDestino = async (req, res) => {
+  const { destino } = req.params;
+
+  try {
+    const viaje = await Viajes.findOne({ where: { slug: destino } });
+
+    res.render("destino", {
+      pagina: "Información del destino",
+      viaje,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export {
+  paginaInicio,
+  paginaNosotros,
+  paginaViajes,
+  paginaTestimoniales,
+  paginaDetalleDestino,
+};
