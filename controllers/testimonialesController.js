@@ -1,15 +1,26 @@
-export const guardarTestimonial = (req, res) => {
+const guardarTestimonial = (req, res) => {
   const errores = [];
   const { nombre, email, comentario } = req.body;
+
   if (nombre.trim() === "") {
-    errores.push({ mensaje: "El NOMBRE esta vacio" });
+    errores.push({ mensaje: "El nombre esta vacio" });
   }
   if (email.trim() === "") {
-    errores.push({ mensaje: "El EMAIL esta vacio" });
+    errores.push({ mensaje: "El email esta vacio" });
   }
   if (comentario.trim() === "") {
-    errores.push({ mensaje: "El COMENTARIO esta vacio" });
+    errores.push({ mensaje: "El comentario esta vacio" });
   }
 
-  console.log(errores);
+  if (errores.length > 0) {
+    res.render("testimoniales", {
+      pagina: "Testimoniales",
+      errores,
+      nombre,
+      email,
+      comentario,
+    });
+  }
 };
+
+export { guardarTestimonial };

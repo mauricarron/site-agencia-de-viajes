@@ -6,15 +6,19 @@ block content
         h2.text-center Comparte tu experiencia
         .row.justify-content-center 
             .col-md-8 
-                form(action="", method="post")
+                if(errores)
+                    .errores.alert-danger.text-center
+                        each error in errores
+                            p= error.mensaje
+                form(action="/testimoniales/", method="post")
                     .form-group 
                         label(for="nombre") Nombre 
-                        input#nombre(type="text", name="nombre", placeholder="Dejanos tu nombre", class="form-control")
+                        input#nombre(type="text", name="nombre", value=nombre, placeholder="Dejanos tu nombre", class="form-control")
                     .form-group 
                         label(for="email") Email 
-                        input#nombre(type="email", name="email", placeholder="Dejanos tu email", class="form-control")
+                        input#nombre(type="email", name="email", value=email, placeholder="Dejanos tu email", class="form-control")
                     .form-group 
                         label(for="comentario") Comentario 
-                        textarea#comentario(name="comentario", rows= 3, class="form-control") 
+                        textarea#comentario(name="comentario", rows= 3, class="form-control")= comentario
                     input.btn.btn-success.btn-block(type="submit")
 
