@@ -2,4 +2,19 @@ extends ./layouts/index
 
 block content
     main.container.mt-5
-        h1= pagina
+        h1.text-center.mb-5 #{pagina}
+        h2.text-center Comparte tu experiencia
+        .row.justify-content-center 
+            .col-md-8 
+                form(action="", method="post")
+                    .form-group 
+                        label(for="nombre") Nombre 
+                        input#nombre(type="text", name="nombre", placeholder="Dejanos tu nombre", class="form-control")
+                    .form-group 
+                        label(for="email") Email 
+                        input#nombre(type="email", name="email", placeholder="Dejanos tu email", class="form-control")
+                    .form-group 
+                        label(for="comentario") Comentario 
+                        textarea#comentario(name="comentario", rows= 3, class="form-control") 
+                    input.btn.btn-success.btn-block(type="submit")
+
