@@ -6,6 +6,7 @@ block content
         h2.text-center Comparte tu experiencia
         .row.justify-content-center 
             .col-md-8 
+                p= JSON.stringify(testimoniales)
                 if(errores)
                     .errores.alert-danger.text-center
                         each error in errores
