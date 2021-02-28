@@ -4,16 +4,7 @@ block content
     main.container.mt-5
         h1.text-center.mb-5 #{pagina}
         h2.text-center Comparte tu experiencia
-            .row.testimoniales 
-                each testimonial in testimoniales
-                    .col-md-6.col-lg-4.mb-4 
-                        .card 
-                            .card-body 
-                                blockquote.blockquote 
-                                p.mb-0 
-                                    | #{testimonial.comentario}
-                                footer.blockquote-footer 
-                                    | #{testimonial.nombre}
+            include ./layouts/bloque_testimoniales
         .row.justify-content-center 
             .col-md-8 
                 if(errores)
