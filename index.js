@@ -8,8 +8,6 @@ db.authenticate()
   .then(() => console.log("Base de datos conectada"))
   .catch((error) => console.log(error));
 
-const port = process.env.PORT || 4000;
-
 app.set("view engine", "pug");
 
 app.use((req, res, next) => {
@@ -26,6 +24,9 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/", router);
 
-app.listen(port, () => {
+const host = process.env.HOST || "0.0.0.0";
+const port = process.env.PORT || 3000;
+
+app.listen(port, host, () => {
   console.log(`Express se esta ejecutando en el puerto ${port}`);
 });
