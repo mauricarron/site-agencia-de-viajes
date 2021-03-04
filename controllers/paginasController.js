@@ -2,15 +2,18 @@ import { Viajes } from "../models/Viajes.js";
 import { Testimoniales } from "../models/Testimoniales.js";
 
 const paginaInicio = async (req, res) => {
+  const getDB = [];
+  getDB.push(Viajes.findAll({ limit: 3 }));
+  getDB.push(Testimoniales.findAll({ limit: 3 }));
+
   try {
-    const viajes = await Viajes.findAll({ limit: 3 });
-    const testimoniales = await Testimoniales.findAll({ limit: 3 });
+    const resultados = await Promise.all(getDB);
 
     res.render("home", {
       pagina: "Inicio",
       clase: "home",
-      viajes,
-      testimoniales,
+      viajes: resultados[0],
+      testimoniales: resultados[1],
     });
   } catch (error) {
     console.log(error);
